@@ -27,3 +27,14 @@ function dump($var, $echo=true, $label=null, $strict=true) {
     }else
         return $output;
 }
+
+//自动加载类库
+function load($class){
+    $class = str_replace('\\','/',$class);
+    $file = ROOT_PATH.'/'.$class.'.php';
+    if(is_file($file)){
+        include_once $file;
+    }else{
+        return false;
+    }
+}
