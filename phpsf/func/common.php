@@ -1,4 +1,21 @@
 <?php
+
+function get_db(){
+    static $_DB;
+    if(empty($_DB)){
+        global $_CONF;
+        $_DB = new lib\db($_CONF);
+    }
+    return $_DB;
+}
+
+function db_query($sql,$params=array()){
+    return get_db()->query($sql,$params);
+}
+function db_get_all($sql,$params=array()){
+    return get_db()->get_all($sql,$params);
+}
+
 function pr($array){
     dump ($array, 1 , '<pre>', 0);
 }
@@ -28,13 +45,4 @@ function dump($var, $echo=true, $label=null, $strict=true) {
         return $output;
 }
 
-//自动加载类库
-function load($class){
-    $class = str_replace('\\','/',$class);
-    $file = ROOT_PATH.'/'.$class.'.php';
-    if(is_file($file)){
-        include_once $file;
-    }else{
-        return false;
-    }
-}
+

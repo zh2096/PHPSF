@@ -1,5 +1,6 @@
 <?php
 namespace lib;
+
 class route{
     public $module;
     public $controller;
