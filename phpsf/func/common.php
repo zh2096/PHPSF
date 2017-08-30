@@ -1,20 +1,18 @@
 <?php
-
-function get_db(){
-    static $_DB;
-    if(empty($_DB)){
-        global $_CONF;
-        $_DB = new lib\db($_CONF);
+/*
+ * 公共函数
+ */
+function model($model){
+    global $_CONTEXT;
+    static $_model;
+    if(empty($_model[$model])){
+        include $_CONTEXT['moduleDir'].'/model/'.$model.'Model.php';
+        $modelName = $_CONTEXT['route']['module'].'\\model\\'.$model.'Model';
+        $_model[$model] = new $modelName();
     }
-    return $_DB;
+    return $_model[$model];
 }
 
-function db_query($sql,$params=array()){
-    return get_db()->query($sql,$params);
-}
-function db_get_all($sql,$params=array()){
-    return get_db()->get_all($sql,$params);
-}
 
 function pr($array){
     dump ($array, 1 , '<pre>', 0);

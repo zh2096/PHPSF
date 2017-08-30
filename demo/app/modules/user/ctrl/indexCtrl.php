@@ -1,6 +1,14 @@
 <?php
-namespace modules\user;
-class IndexCtrl{
+namespace user\ctrl;
+use lib\base;
+
+class IndexCtrl extends base {
+    public function index(){
+        $item = model('user')->getItem(2);
+        pr($item);
+    }
+
+
     public function sort(){
         $arr = array(50,2,1,9);
         $num = count($arr);
@@ -44,14 +52,5 @@ class IndexCtrl{
             }
         }
         return $numArr;
-    }
-
-    public function db(){
-
-        $rs =db_query('INSERT INTO demo(val) VALUES (:v1),(:v2)',array(':v1'=>'abc',':v2'=>'123'));
-        pr($rs);
-
-        $rs =db_get_all('SELECT * FROM demo WHERE id=:id',array(':id'=>2));
-        pr($rs);
     }
 }

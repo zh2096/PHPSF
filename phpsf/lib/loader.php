@@ -1,4 +1,6 @@
 <?php
+namespace lib;
+
 class loader{
     //自动加载类库
     static public function load($class){
