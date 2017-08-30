@@ -9,7 +9,7 @@ class loader{
         if(is_file($file)){
             include_once $file;
         }else{
-            new \Exception('loader:file not exist('.$file.')');
+            throw new \Exception('loader:file not exist('.$file.')');
         }
     }
 }

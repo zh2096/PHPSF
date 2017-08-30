@@ -5,7 +5,8 @@ use lib\base;
 class IndexCtrl extends base {
     public function index(){
         $item = model('user')->getItem(2);
-        pr($item);
+        $this->assign('info',$item);
+        $this->display();
     }
 
 
