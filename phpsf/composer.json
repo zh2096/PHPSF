@@ -1,0 +1,13 @@
+{
+    "require": {
+        "symfony/var-dumper": "^3.3"
+    },
+    "autoload": {
+        "classmap": [
+	    "lib"
+	],
+	"files":[
+	    "func/common.php"
+	]
+    }
+}

@@ -8,9 +8,10 @@ if(DEBUG){
     error_reporting(E_ALL);
     ini_set('display_errors','on');
 } else ini_set('display_error','off');
-include ROOT_PATH.'/func/common.php';
-include ROOT_PATH.'/lib/loader.php';
-spl_autoload_register('lib\loader::load');
+//include ROOT_PATH.'/func/common.php';
+//include ROOT_PATH.'/lib/loader.php';
+//spl_autoload_register('lib\loader::load');//改成使用composer生成的自动加载文件
+require ROOT_PATH.'/vendor/autoload.php';
 
 $app_path =  realpath(APP_PATH);
 global $_CONTEXT ;//全局上下文信息
