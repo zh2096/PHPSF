@@ -6,6 +6,7 @@ class IndexCtrl extends base {
     public function index(){
         $item = model('user')->getItem(2);
         $this->assign('info',$item);
+        dump($item);
         $this->display();
     }
 
