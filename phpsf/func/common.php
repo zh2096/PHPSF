@@ -7,7 +7,7 @@ function model($model){
     static $_model;
     if(empty($_model[$model])){
         include $_CONTEXT['moduleDir'].'/model/'.$model.'Model.php';
-        $modelName = $_CONTEXT['route']['module'].'\\model\\'.$model.'Model';
+        $modelName = basename(APP_PATH).'\\'.APP_MOD_DIR.'\\'.$_CONTEXT['route']['module'].'\\model\\'.$model.'Model';
         $_model[$model] = new $modelName();
     }
     return $_model[$model];

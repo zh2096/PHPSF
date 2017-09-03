@@ -1,5 +1,5 @@
 <?php
-namespace lib;
+namespace phpsf\lib;
 
 class loader{
     //自动加载类库

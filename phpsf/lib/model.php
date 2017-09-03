@@ -1,5 +1,5 @@
 <?php
-namespace lib;
+namespace phpsf\lib;
 
 class model{
     public function get_db(){

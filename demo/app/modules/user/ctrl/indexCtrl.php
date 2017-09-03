@@ -1,6 +1,6 @@
 <?php
-namespace user\ctrl;
-use lib\base;
+namespace app\modules\user\ctrl;
+use phpsf\lib\base;
 
 class IndexCtrl extends base {
     public function index(){

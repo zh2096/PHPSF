@@ -1,5 +1,5 @@
 <?php
-namespace lib;
+namespace phpsf\lib;
 
 class route{
     public $routeInfo;

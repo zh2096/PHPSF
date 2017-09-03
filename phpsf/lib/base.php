@@ -2,7 +2,7 @@
 /*
  * 控制器基础类
  */
-namespace lib;
+namespace phpsf\lib;
 
 class base{
     public $assign;
